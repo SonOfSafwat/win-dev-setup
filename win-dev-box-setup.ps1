@@ -44,6 +44,7 @@ RefreshEnv
 #choco install -y office365business
 choco install firacode --yes
 
+
 # checkout recent projects
 # mkdir C:\github
 # cd C:\github
