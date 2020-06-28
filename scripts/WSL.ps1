@@ -10,7 +10,10 @@ RefreshEnv
 Ubuntu1804 install --root
 Ubuntu1804 run apt update
 Ubuntu1804 run apt upgrade -y
-
+# Install tools in WSL instance
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804 run apt install ansible -y
+Ubuntu1804 run apt install nodejs -y
 <#
 NOTE: Other distros can be scripted the same way for example:
 
@@ -27,4 +30,3 @@ Add-AppxPackage -Path ~/openSUSE.appx
 # Launch openSUSE
 opensuse-42.exe
 #>
-

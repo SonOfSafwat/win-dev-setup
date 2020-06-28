@@ -1,7 +1,3 @@
-# Description: Boxstarter Script
-# Author: Microsoft
-# Common settings for azure devops
-
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
@@ -22,28 +18,41 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
+
+
 #--- Setting up Windows ---
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
+#--- installing Windows Template Studio ---
+executeScript "WindowsTemplateStudio.ps1";
+# common browsers
 executeScript "Browsers.ps1";
-
+# Hyper-V
 executeScript "HyperV.ps1";
 RefreshEnv
+# Docker
+executeScript "Docker.ps1";
+# WSL
 executeScript "WSL.ps1";
 RefreshEnv
-executeScript "Docker.ps1";
 
-choco install -y powershell-core
-choco install -y azure-cli
-Install-Module -Force Az
-choco install -y microsoftazurestorageexplorer
-choco install -y terraform
 
-# Install tools in WSL instance
-write-host "Installing tools inside the WSL distro..."
-Ubuntu1804 run apt install ansible -y
+# personalize
+#choco install -y microsoft-teams
+#choco install -y office365business
+choco install firacode --yes
+
+# checkout recent projects
+# mkdir C:\github
+# cd C:\github
+# git.exe clone https://github.com/microsoft/windows-dev-box-setup-scripts
+# git.exe clone https://github.com/microsoft/winappdriver
+# git.exe clone https://github.com/microsoft/wsl
+# git.exe clone https://github.com/PowerShell/PowerShell
+
+
 
 Enable-UAC
 Enable-MicrosoftUpdate
