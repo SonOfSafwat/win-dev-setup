@@ -1,50 +1,26 @@
 # About this project
 
-The goal of this project is to provide a central place to share ideas for streamlining dev box setup and provide sample scripts for common dev scenarios. It's likely you will want to take the scripts here and modify them to fit your particular needs. When you make those changes if you think others would benefit please consider submitting a PR. Before you contribute please see the [Contribution Guidelines](CONTRIBUTING.md).
-
-These scripts leverage two popular open source projects.
-
-- Boxstarter [boxstarter.org](http://boxstarter.org)
-- Chocolatey [chocolatey.org](http://chocolatey.org)
-
-Boxstarter is a wrapper for Chocolatey and includes features like managing reboots for you. We're using the Boxstarter web launcher to start the installation process:<br/>
-https://boxstarter.org/Learn/WebLauncher
+My opinianated windows dev machine setup based and influenced by [microsoft/windows-dev-box-setup-scripts](https://github.com/microsoft/windows-dev-box-setup-scripts)
 
 ## Project structure
 
 The script code is organized in a hierarchy
 
-**Recipes**
-A recipe is the script you run. It calls multiple helper scripts. These currently live in the root of the project (dev_app.ps1, dev_webnodejs.ps1, etc.)
+**Scripts**
+Responsible Mainly for installing the packages/modules
 
-**Helper Scripts**: A helper script performs setup routines that may be useful by many recipes. Recipes call helper scripts (you don't run helper scripts directly). The helper scripts live in the **scripts** folder
+**Configs**
+Configuring windows environment and/or installed items
 
-## You may want to customize the scripts
-
-These scripts should cover a lot of what you need but will not likely match your personal preferences exactly. In this case please fork the project and change the scripts however you desire. We really appreciate PR's back to this project if you have recommended changes.
-
-_Note: The one-click links use the following format. When working out of a different Fork or Branch you'll want to update the links as follows:_
-
+**Notes:**
+The one-click links use the following format. When working out of a different Fork or Branch you'll want to update the links as follows:\_
 `http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/RECIPE_NAME.ps1`
 
-## How to run the scripts
+## Run The script
 
-To run a recipe script, click a link in the table below from your target machine. This will download the Boxstarter one-click application, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the recipe to begin. You can then leave the job unattended and come back when it's finished.
+[Click Me](http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1)
 
-| Click link to run                                                                                                                                                              | Description                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1'>Full Desktop App</a>                  | Windows Desktop App Development (Visual Studio, Windows SDK, C++, UWP, .NET (WPF and Winforms)) |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app_desktop_uwp.ps1'>UWP Desktop App</a>       | Windows Desktop App Development (Visual Studio, Windows SDK, UWP)                               |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app_desktop_.NET.ps1'>.NET Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK, .NET (WPF and Winforms))           |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app_desktop_cplusplus.ps1'>C++ Desktop App</a> | Windows Desktop App Development (Visual Studio, Windows SDK, C++)                               |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1'>Web</a>                               | Web (VS Code, WSL, Multiple Browsers)                                                           |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1'>Web NodeJS</a>                 | Web Dev with NodeJS (Web + NodeJS LTS)¹                                                        |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_windows.ps1'>Machine Learning Windows</a>   | Machine Learning with only Windows native tools                                                 |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_wsl.ps1'>Machine Learning Linux</a>         | Machine Learning with Linux tools running on WSL                                                |
-| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/devops_azure.ps1'>DevOps Azure</a>                 | Client setup for DevOps with Azure                                                              |
-|                                                                                                                                                                                | Xamarin (Visual Studio, Xamarin, Android SDK)                                                   |
-|                                                                                                                                                                                | Containers (Docker, Kubernetes, etc...)                                                         |
-|                                                                                                                                                                                | Submit a PR with a recommended configuration!                                                   |
+## Notes From [microsoft/windows-dev-box-setup-scripts](https://github.com/microsoft/windows-dev-box-setup-scripts)
 
 **Notes:**
 

@@ -1,4 +1,6 @@
+Enable-RemoteDesktop
 Disable-UAC
+Update-ExecutionPolicy Unrestricted
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
 # Get the base URI path from the ScriptToCall value
@@ -12,6 +14,13 @@ $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
 $helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
 
+function executeConfig {
+	Param ([string]$config)
+	$configUri = $helperUri + "/configs"
+	write-host "Executing Config: $configUri/$config ..."
+	iex ((new-object net.webclient).DownloadString("$configUri/$config"))
+}
+
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
@@ -19,30 +28,28 @@ function executeScript {
 }
 
 
+$scriptsList = @(
+
+);
+
+$configsList = @(
+
+);
 
 #--- Setting up Windows ---
-executeScript "FileExplorerSettings.ps1";
-executeScript "SystemConfiguration.ps1";
-executeScript "RemoveDefaultApps.ps1";
-executeScript "CommonDevTools.ps1";
-#--- installing Windows Template Studio ---
-executeScript "WindowsTemplateStudio.ps1";
-# common browsers
-executeScript "Browsers.ps1";
-# Hyper-V
-executeScript "HyperV.ps1";
-RefreshEnv
-# Docker
-executeScript "Docker.ps1";
-# WSL
-executeScript "WSL.ps1";
-RefreshEnv
+foreach ($script in $scriptsList) {
+	executeScript $script
+    Update-SessionEnvironment
+    RefreshEnv
+}
+
+foreach ($config in $configsList) {
+	executeConfig $config
+    Update-SessionEnvironment
+    RefreshEnv
+}
 
 
-# personalize
-#choco install -y microsoft-teams
-#choco install -y office365business
-choco install firacode --yes
 
 
 # checkout recent projects
@@ -54,7 +61,7 @@ choco install firacode --yes
 # git.exe clone https://github.com/PowerShell/PowerShell
 
 
-
+#--- reenabling critial items ---
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
