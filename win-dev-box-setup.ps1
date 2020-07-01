@@ -11,7 +11,6 @@ $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
 $helperUri = $helperUri.TrimStart("'", " ")
 $helperUri = $helperUri.TrimEnd("'", " ")
 $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
-$helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
 
 function executeConfig {
@@ -22,9 +21,10 @@ function executeConfig {
 }
 
 function executeScript {
-    Param ([string]$script)
-    write-host "executing $helperUri/$script ..."
-	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
+		Param ([string]$script)
+		$scriptsUri = $helperUri + "/scripts"
+    write-host "executing $scriptsUri/$script ..."
+	iex ((new-object net.webclient).DownloadString("$scriptsUri/$script"))
 }
 
 
