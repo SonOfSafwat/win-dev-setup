@@ -48,7 +48,9 @@ $configsList = @(
 "remove-default-apps.ps1",
 "git.ps1",
 "iis.ps1",
-"taskbar-config.ps1"
+"taskbar-config.ps1",
+"vscode.ps1",
+"npm.ps1"
 );
 
 #--- Setting up Windows ---
