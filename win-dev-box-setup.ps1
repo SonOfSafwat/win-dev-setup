@@ -29,11 +29,26 @@ function executeScript {
 
 
 $scriptsList = @(
-
+"browsers.ps1",
+"docker.ps1",
+"dotnet.ps1",
+"fonts.ps1",
+"git.ps1",
+"hyper-v.ps1",
+"node.ps1",
+"terminals.ps1",
+"tools.ps1",
+"visual-studio.ps1",
+"vscode.ps1",
+"wsl.ps1"
 );
 
 $configsList = @(
-
+"file-explorer-config.ps1",
+"git.ps1",
+"iis.ps1",
+"remove-default-apps.ps1",
+"taskbar-config.ps1"
 );
 
 #--- Setting up Windows ---
