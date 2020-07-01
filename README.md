@@ -14,11 +14,11 @@ Configuring windows environment and/or installed items
 
 **Notes:**
 The one-click links use the following format. When working out of a different Fork or Branch you'll want to update the links as follows:
-`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/RECIPE_NAME.ps1`
+`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/REPO_NAME/YOUR_BRANCH/RECIPE_NAME.ps1`
 
 ## Run The script
 
-[Click Me](http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/windows-dev-box-setup-scripts/master/win-dev-box-setup.ps1)
+[Click Me](http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-box-setup.ps1)
 
 ## Notes From [microsoft/windows-dev-box-setup-scripts](https://github.com/microsoft/windows-dev-box-setup-scripts)
 
