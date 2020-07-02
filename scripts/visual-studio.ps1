@@ -1,6 +1,4 @@
-Write-Host "###############################################" -ForegroundColor White;
-Write-Host "Installing Visual Studio..." -ForegroundColor White;
-Write-Host "###############################################" -ForegroundColor White;
+
 #--- Installing VS and VS Code with Git
 # visualstudio2017community
 # visualstudio2017professional
