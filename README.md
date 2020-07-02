@@ -12,17 +12,19 @@ Responsible Mainly for installing the packages/modules
 **Configs**
 Configuring windows environment and/or installed items
 
-**Notes:**
-The one-click links use the following format. When working out of a different Fork or Branch you'll want to update the links as follows:
-`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/REPO_NAME/YOUR_BRANCH/RECIPE_NAME.ps1`
-
 ## Run The script
 
-[Click Me](http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-box-setup.ps1)
+| Click link to run                                                                                                                                             | Description                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-box-setup.ps1'>Full Desktop App</a>      | Windows Desktop App Development (Visual Studio, Windows SDK, C++, WSL, .NET, node, npm) |
+| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-scripts-setup.ps1'>Install Apps only</a> | Install Packages without any configs                                                    |
+| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-box-config-setup.ps1'>Run Configs </a>   | Windows Desktop App Development (Visual Studio, Windows SDK, .NET (WPF and Winforms))   |
+| <a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/ASafwatAli/win-dev-setup/master/win-dev-server-setup.ps1'>Server Setup</a>       | Removing Hyper-V, WSL,Docker, Auto Windows Update                                       |
 
 ## Notes From [microsoft/windows-dev-box-setup-scripts](https://github.com/microsoft/windows-dev-box-setup-scripts)
 
-**Notes:**
+The one-click links use the following format. When working out of a different Fork or Branch you'll want to update the links as follows:
+`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/REPO_NAME/YOUR_BRANCH/RECIPE_NAME.ps1`
 
 1. If you are using WSL there's a followup step we recommend after running the setup script. When the script finishes you will only have a root user with a blank password. You should manually create a non-root user via `$ sudo adduser [USERNAME] sudo`
    with a non-blank password. Use this user going forward. For more info on WSL please refer to the [documentation](https://docs.microsoft.com/en-us/windows/wsl/about).
