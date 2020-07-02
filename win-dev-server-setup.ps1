@@ -37,7 +37,7 @@ $scriptsList = @(
 "terminals.ps1",
 "tools.ps1",
 "visual-studio.ps1",
-"vscode.ps1",
+"vscode.ps1"
 );
 
 $configsList = @(
